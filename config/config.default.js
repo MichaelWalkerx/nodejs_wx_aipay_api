@@ -35,7 +35,8 @@ module.exports = appInfo => {
     database: 'egg', // 数据库名
     timezone: '+08:00',
   };
-  // 百度orc 申请地址 http://ai.baidu.com/tech/ocr 务必修改
+  // 百度orc 申请地址 http://ai.baidu.com/tech/ocr 务必修改，无需付费，看下图
+  // 领取免费的使用额度 https://attach.52pojie.cn/forum/202106/12/125217mu74g3g1364c3g7y.png
   config.baidu = {
     // 设置APPID/AK/SK
     APP_ID: 'xx',
