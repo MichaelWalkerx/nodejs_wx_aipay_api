@@ -13,6 +13,10 @@ class BaiduService extends Service {
       client.accurateBasic(image).then(function(result) {
         // 拿到文字识别结果
         const qrData = {};
+        if(result.error_code){
+          console.log('文字识别配置错误或识别额度已经使用完毕错误代码：'+esult.error_code);
+          resolve();
+        }
         result.words_result.forEach(element => { // 识别付款码文字信息
           if (element.words.includes('微信')) {
             qrData.qr_type = 'wechat';
