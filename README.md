@@ -40,7 +40,7 @@
 
   3. 在项目根目录中打开命令行， 执行 npm install 安装依赖文件
 
-  4. 在项目根目录中打开命令行， 执行 npx sequelize db:migrate  创建数据表结构； 注： 是npx 不是 npm
+  4. 在项目根目录中打开命令行， 执行 npx sequelize db:migrate  创建数据表结构； 注： 是npx 不是 npm ;（也可以通过项目文件pay.sql）文件手动导入到数据库
   
   5. 在项目根目录中打开命令行， 执行 npm start 启动应用,默认端口7001； 注： npm stop 停止应用
 
