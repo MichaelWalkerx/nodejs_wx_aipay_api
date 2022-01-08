@@ -19,13 +19,13 @@
   
   后台演示地址: http://pay.yio.me/ 账号密码 admin，**api版后台仅保留订单列表和二维码管理功能**。
   
-  支付演示地址: http://pay.yio.me/#/goods/DwnNGCW4VLk1CjemIiUqf 
+  支付演示地址: http://pay.yio.me/#/goods/89ZHH-lYAJromc5r9BfIG 
   
   ## 客户端赞助地址
   
   没有客户端无回调通知，其他功能不影响，可以测试后台功能，客户端需要购买后使用。
 
-  客户端赞助地址： http://pay.yio.me/#/goods/74ct1zBzZBW8YGFBKe-Yf 
+  客户端赞助地址： http://pay.yio.me/#/goods/ZL9BDNG5aLYOFhHTbCJUq
 
 ## 安装教程
 
