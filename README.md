@@ -14,12 +14,9 @@
     2022年01月10日
     zfb 10.2.53（最新版）
     vx 8.0.16（最新版）
-  
-  ## 关于demo演示
-  
-  后台演示地址: http://demo.yio.me/ 账号admin 密码 woCW3FXs5L8uIdKV ，**api版后台仅保留订单列表和二维码管理功能**。
-  
-  支付演示地址: http://demo.yio.me/#/goods/89ZHH-lYAJromc5r9BfIG 
+    
+    
+  测试地址: http://demo.yio.me/#/goods/89ZHH-lYAJromc5r9BfIG 
   
   ## 客户端赞助地址
   
