@@ -17,7 +17,7 @@
     
   ## 测试地址
   
-    测试地址: http://demo.yio.me/#/goods/89ZHH-lYAJromc5r9BfIG 
+  测试地址: http://demo.yio.me/#/goods/89ZHH-lYAJromc5r9BfIG
     
   ## 客户端赞助地址
   
