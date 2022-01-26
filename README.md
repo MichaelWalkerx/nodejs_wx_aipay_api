@@ -9,6 +9,11 @@
 
   实现原理： 当收到zfb、vx、实时收款信息，客户端会实时通知服务器收款金额和方式，服务器收到有效期订单金额后处理订单状态。5分钟订单有效期内有相同金额的订单会随机减免0.01 - 0.10的方式用来区分订单，不涉及更改客户端。
 
+  ## 截图演示
+    ![登录界面](https://raw.githubusercontent.com/yioMe/img/main/1.png)
+    ![订单界面](https://raw.githubusercontent.com/yioMe/img/main/2.png)
+    ![收款码管理界面](https://raw.githubusercontent.com/yioMe/img/main/3.png)
+
   
   ## 支持信息
     2022年01月10日
