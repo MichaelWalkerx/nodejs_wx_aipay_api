@@ -15,11 +15,6 @@
   ![订单界面](https://raw.githubusercontent.com/yioMe/img/main/2.png)
   ![收款码管理界面](https://raw.githubusercontent.com/yioMe/img/main/3.png)
 
-  
-  ## 支持信息
-    2022年01月26日
-    zfb 10.2.53（最新版）
-    vx 8.0.16（最新版）
     
   ## 测试地址
   
