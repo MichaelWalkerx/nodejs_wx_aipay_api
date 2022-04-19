@@ -63,7 +63,7 @@ class OrderController extends Controller {
    * @apiDescription 请求类型 Content-Type: application/json;charset=UTF-8，请勿务在前端请求，会泄露secretkey
    *
    * @apiParam  {String} order_id 外部订单编号
-   * @apiParam  {String} order_type 支付方式 wechat（微信） alipay（支付宝） 默认 wechat
+   * @apiParam  {String} order_type 支付方式 wechat（WX） alipay（ZFB） 默认 wechat
    * @apiParam  {String} order_price 订单金额 保留两位小数
    * @apiParam  {String} order_name 订单名称/商品名称
    * @apiParam  {String} sign 签名->加密方法 md5(md5(order_id + order_price) + secretkey) // 这里的 + 是字符串拼接
@@ -72,7 +72,7 @@ class OrderController extends Controller {
    *
    */
   async create_order() {
-    const { ctx, config: { secretkey, payMax, domain, alipayUserId } } = this;
+    const { ctx, config: { secretkey, payMax, domain, alipayUserId, alipayImgCode} } = this;
     const { order_id, order_type, order_price, sign, redirect_url } = ctx.request.body;
     try {
       if (!order_id) {
@@ -127,12 +127,14 @@ class OrderController extends Controller {
           ctx.body = await ctx.service.order.createOrder(alipay_url[index].dataValues.qr_url, alipay_url[index].dataValues.qr_price);
         }
       } else if (order_type === 'alipay') {
-        const alipays = 'alipays://platformapi/startapp?appId=20000067&appClearTop=false&startMultApp=YES&showTitleBar=YES&showToolBar=NO&showLoading=YES&pullRefresh=YES&url='; 
-        const url = domain + '/alipay.html?u=' + alipayUserId + '&a=';
+        // const alipays = 'alipays://platformapi/startapp?appId=20000067&appClearTop=false&startMultApp=YES&showTitleBar=YES&showToolBar=NO&showLoading=YES&pullRefresh=YES&url='; 
+        // const url = domain + '/alipay.html?u=' + alipayUserId + '&a=';
+        const url = alipayImgCode;
         let tempPrice = order_price;
         if (orderPriceStatus.length === 0) {
           // 此金额可被使用
-          ctx.body = await ctx.service.order.createOrder(alipays + encodeURIComponent(url + tempPrice), tempPrice);
+          // ctx.body = await ctx.service.order.createOrder(alipays + encodeURIComponent(url + tempPrice), tempPrice);
+          ctx.body = await ctx.service.order.createOrder(url, tempPrice);
         } else {
           // 此金额已经被使用了，查询其他二维码
           let newPrice = [];
@@ -150,10 +152,11 @@ class OrderController extends Controller {
           const filterNewPrice = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i)); // 找出可以使用的金额
           newPrice = filterNewPrice(newPrice);
           const index = Math.floor((Math.random() * newPrice.length));
-          if (newPrice.length === 0) { // 支付宝立减金额达到上限
+          if (newPrice.length === 0) { // ZFB立减金额达到上限
             throw '系统火爆，请过1-3分钟后下单!';
           }
-          ctx.body = await ctx.service.order.createOrder(alipays + encodeURIComponent(url + newPrice[index]), newPrice[index]);
+          // ctx.body = await ctx.service.order.createOrder(alipays + encodeURIComponent(url + newPrice[index]), newPrice[index]);
+          ctx.body = await ctx.service.order.createOrder(url, newPrice[index]);
         }
       }
     } catch (e) {

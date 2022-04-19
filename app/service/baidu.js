@@ -18,7 +18,7 @@ class BaiduService extends Service {
           resolve();
         }
         result.words_result.forEach(element => { // 识别付款码文字信息
-          if (element.words.includes('微信')) {
+          if (element.words.includes('WX')) {
             qrData.qr_type = 'wechat';
           }
           if (element.words.includes('￥')) {

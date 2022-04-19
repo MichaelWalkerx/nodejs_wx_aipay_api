@@ -1,7 +1,7 @@
 {
   "name": "ali_wx_pay",
   "version": "1.0.0",
-  "description": "支付宝、微信个人免签收款稳定版。",
+  "description": "zfb、wx个人免签收款稳定版。",
   "private": true,
   "dependencies": {
     "await-stream-ready": "^1.0.1",

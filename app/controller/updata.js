@@ -41,7 +41,7 @@ module.exports = class extends Controller {
       // 获取二维码文本信息
       const qrInfo = await ctx.service.baidu.index(imageBase64.toString('base64'));
       if (!qrInfo) {
-        ctx.body = { code: -1, data: '', msg: '请上传微信定额收款二维码!' };
+        ctx.body = { code: -1, data: '', msg: '请上传WX定额收款二维码!' };
         return false;
       }
       // 获取二维码识别信息

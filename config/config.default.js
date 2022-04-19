@@ -7,14 +7,15 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1547540555445_3889';
   // 签名密匙妥善保管，不可泄露，务必修改
   config.secretkey = 'yioMe';
-  // 绑定的域名必须是公网可以访问的，务必修改
-  config.domain = 'http://10.10.10.65:7001'; // 请指定协议
-  // 登录支付宝 https://my.alipay.com/portal/i.htm 右键查看网页源代码搜索 userId 得到的值208开头16位
-  // 或者支付宝扫码 https://attach.52pojie.cn/forum/202004/01/140413wyewb2uf2yw0xfa3.png 即可取到支付宝userid
-  config.alipayUserId = '2088012748271675';
+  /** 
+   * ZFBh5唤醒支付暂不可用！
+   * 需要用户手动输入支付金额！！
+   * 保存不带金额的zfb收款码，使用二维码解析工具把解析出来的内容填入下方！！！
+   * */ 
+  config.alipayImgCode="https://qr.alipay.com/fkx13684uxcmpyhn2tp0lcx";
   config.payMax = { // 设置随机立减金额，单位为0.01
     wx: 10, // 表示会在订单金额的基础上最多减免 0.01 * 10,减免的金额必须有对应的收款二维码，否则无法下单!
-    alipay: 20, // 支付宝可以任意设置减免金额，无需上传二维码!
+    alipay: 20, // ZFB可以任意设置减免金额，需要用户手动输入金额!
   };
   // 设置 修改 订单有效期
   config.orderValidity = 5; // 默认是5分钟 整数

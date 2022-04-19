@@ -48,7 +48,7 @@ class ClientController extends Controller {
    * @apiDescription 接收安卓推送过来的收款信息，并处理订单状态
    *
    * @apiParam  {String} sign 客户端推送过来的签名 加密方式为 md5(md5(price + type) + secretkey) // 收款金额，收款方式(wechat/alipay)，密匙 注意此处的 + 是字符串拼接
-   * @apiParam  {String} type 客户端推送过来的收款方式 wechat/alipay （微信/支付宝）
+   * @apiParam  {String} type 客户端推送过来的收款方式 wechat/alipay （WX/ZFB）
    * @apiParam  {String} price 客户端推送过来的真实收款金额
    *
    * @apiSuccess (200) {type} name description
@@ -81,7 +81,7 @@ class ClientController extends Controller {
       console.log('通知：收款信息，收到来自' + type + '金额' + price + '的订单，处理完毕!');
       ctx.body = {
         code: 1,
-        msg: type === 'wechat' ? '微信支付收款处理成功' : '支付宝收款处理成功',
+        msg: type === 'wechat' ? 'WX支付收款处理成功' : 'ZFB收款处理成功',
         data: '',
         url: '/api/notify.html',
         wait: 3,
