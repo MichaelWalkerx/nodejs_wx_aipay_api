@@ -14,7 +14,7 @@
     "jsqr": "^1.1.1",
     "md5": "^2.2.1",
     "moment": "^2.23.0",
-    "mysql2": "^1.6.4",
+    "mysql2": "^3.9.7",
     "request": "^2.88.0"
   },
   "devDependencies": {
